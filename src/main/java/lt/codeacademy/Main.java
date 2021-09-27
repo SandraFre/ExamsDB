@@ -1,6 +1,7 @@
 package lt.codeacademy;
 
 import lt.codeacademy.service.ExamService;
+import lt.codeacademy.service.StudentAnswerService;
 import lt.codeacademy.service.StudentService;
 
 import java.util.Scanner;
@@ -10,6 +11,7 @@ public class Main {
         Scanner scanner = new Scanner(System.in);
         StudentService studentService = new StudentService();
         ExamService examService = new ExamService();
+        StudentAnswerService studentAnswerService = new StudentAnswerService();
 
 //        studentService.createStudent(scanner);
 //        studentService.updateStudentInfoById(scanner);

@@ -13,9 +13,8 @@ import java.util.stream.Collectors;
 public class ExamService {
 
     private final ExamRepository examRepository;
-    private StudentService studentService;
 
-    private StudentAnswerService studentAnswerService;
+
 
     public ExamService(){
         examRepository = new ExamRepository();
@@ -79,8 +78,7 @@ public class ExamService {
             System.out.println("Exam does not exist");
             return;
         }
-//        studentService.getStudentById(sc);
-
+        StudentAnswerService studentAnswerService = new StudentAnswerService();
         System.out.println("---- Exam: " + exam.getTitle() + " ----");
         for (Question question:exam.getQuestions().stream().collect(Collectors.toList())){
             System.out.println(question.getQuestionTitle());
