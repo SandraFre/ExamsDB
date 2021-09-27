@@ -17,7 +17,7 @@ public class Main {
 
 //        examService.createExam(scanner);
 //        examService.getExamsWithQuestions();
-        examService.getExamWithQuestionsById(scanner);
+//        examService.getExamWithQuestionsById(scanner);
 
 
     }
