@@ -13,13 +13,14 @@ public class Main {
 
 //        studentService.createStudent(scanner);
 //        studentService.updateStudentInfoById(scanner);
+//        studentService.delete(scanner);
 //        studentService.getStudents();
 
 //        examService.createExam(scanner);
 //        examService.getExamsWithQuestions();
 //        examService.getExamWithQuestionsById(scanner);
 
-        examService.startExam(scanner);
+//        examService.startExam(scanner);
 
 
     }

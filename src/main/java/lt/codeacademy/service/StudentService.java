@@ -66,7 +66,9 @@ public class StudentService {
         studentRepository.updateStudent(student);
     }
 
-    public void delete(){
-//        studentRepository.deleteStudentById();
+    public void delete(Scanner sc){
+        System.out.println("Enter id of student you want to delete:");
+        Long id = sc.nextLong();
+        studentRepository.deleteStudentById(id);
     }
 }

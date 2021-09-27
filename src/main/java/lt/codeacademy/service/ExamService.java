@@ -79,7 +79,7 @@ public class ExamService {
             System.out.println("Exam does not exist");
             return;
         }
-        studentService.getStudentById(sc);
+//        studentService.getStudentById(sc);
 
         System.out.println("---- Exam: " + exam.getTitle() + " ----");
         for (Question question:exam.getQuestions().stream().collect(Collectors.toList())){
