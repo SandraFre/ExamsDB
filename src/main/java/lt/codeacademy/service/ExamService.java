@@ -77,6 +77,7 @@ public class ExamService {
             return;
         }
         StudentAnswerService studentAnswerService = new StudentAnswerService();
+
         System.out.println("---- Exam: " + exam.getTitle() + " ----");
         for (Question question:exam.getQuestions().stream().collect(Collectors.toList())){
             System.out.println(question.getQuestionTitle());

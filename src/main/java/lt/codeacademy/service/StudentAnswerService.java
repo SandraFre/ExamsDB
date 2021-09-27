@@ -10,12 +10,11 @@ public class StudentAnswerService {
     private final StudentAnswerRepository studentAnswerRepository;
 
 
-    public StudentAnswerService(){
+    public StudentAnswerService() {
         studentAnswerRepository = new StudentAnswerRepository();
     }
 
-
-    public void enterAnswer(Scanner sc){
+    public void enterAnswer(Scanner sc) {
         System.out.println("Enter your answer:");
         String answer = sc.nextLine();
 
