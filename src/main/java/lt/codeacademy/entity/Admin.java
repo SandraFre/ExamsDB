@@ -13,7 +13,9 @@ public class Admin {
     @Id
     @GeneratedValue (strategy = GenerationType.IDENTITY)
     private Long id;
+    @Column(name = "admin_name")
     String adminName;
+    @Column(name = "admin_password")
     String adminPassword;
 
     public Admin(String adminName, String adminPassword) {

@@ -17,15 +17,7 @@ public class Exam {
     private String title;
     @OneToMany(mappedBy = "exam", cascade = CascadeType.ALL, fetch = FetchType.EAGER)
     private Set<Result> results;
-    @ManyToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
-    @JoinTable(
-            name = "exams_questions",
-            joinColumns = {
-                    @JoinColumn(name = "exam_id", referencedColumnName = "id")
-            },
-            inverseJoinColumns = {
-                    @JoinColumn(name = "question_id", referencedColumnName = "id")
-            })
+    @OneToMany(mappedBy = "exam", cascade = CascadeType.ALL, fetch = FetchType.EAGER)
     private Set<Question> questions;
 
     public Exam(String title) {

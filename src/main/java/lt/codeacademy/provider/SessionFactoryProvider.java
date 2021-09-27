@@ -10,11 +10,13 @@ import org.hibernate.cfg.Environment;
 import java.util.Properties;
 
 public class SessionFactoryProvider {
+
     private static SessionFactoryProvider instance;
     private SessionFactory sessionFactory;
 
     private SessionFactoryProvider() {
         try {
+
             Configuration configuration = new Configuration();
             Properties properties = createProperties();
             configuration.setProperties(properties);
@@ -49,12 +51,12 @@ public class SessionFactoryProvider {
         Properties properties = new Properties();
         properties.put(Environment.DIALECT, "org.hibernate.dialect.PostgreSQL94Dialect");
         properties.put(Environment.DRIVER, "org.postgresql.Driver");
-        properties.put(Environment.URL, "jdbc:postgresql://localhost/hibernate");
+        properties.put(Environment.URL, "jdbc:postgresql://localhost/examsDB");
         properties.put(Environment.USER, "postgres");
         properties.put(Environment.PASS, "798");
         properties.put(Environment.SHOW_SQL, "true");
-        properties.put(Environment.HBM2DDL_AUTO, "create-drop");
-//        properties.put(Environment.HBM2DDL_AUTO, "update");
+//        properties.put(Environment.HBM2DDL_AUTO, "create-drop");
+        properties.put(Environment.HBM2DDL_AUTO, "update");
 
         return properties;
     }
