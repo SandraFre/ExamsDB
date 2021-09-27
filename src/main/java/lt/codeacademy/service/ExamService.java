@@ -4,6 +4,7 @@ import lt.codeacademy.entity.Exam;
 import lt.codeacademy.entity.Question;
 import lt.codeacademy.entity.Student;
 import lt.codeacademy.repository.ExamRepository;
+import lt.codeacademy.repository.StudentRepository;
 
 import java.util.List;
 import java.util.Scanner;
@@ -12,6 +13,7 @@ import java.util.stream.Collectors;
 public class ExamService {
 
     private final ExamRepository examRepository;
+    private StudentService studentService;
 
     private StudentAnswerService studentAnswerService;
 
@@ -77,6 +79,7 @@ public class ExamService {
             System.out.println("Exam does not exist");
             return;
         }
+        Student student = studentService.getStudentById(sc);
 
         System.out.println("---- Exam: " + exam.getTitle() + " ----");
         for (Question question:exam.getQuestions().stream().collect(Collectors.toList())){

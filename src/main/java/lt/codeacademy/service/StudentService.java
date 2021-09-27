@@ -35,6 +35,17 @@ public class StudentService {
         studentRepository.getStudents().forEach(System.out::println);
     }
 
+    public Student getStudentById(Scanner sc){
+        System.out.println("Enter student id:");
+        Long id = sc.nextLong();
+        Student student = studentRepository.getStudent(id);
+        if (student==null){
+            System.out.println("Student does not exist");
+            return null;
+        }
+        return student;
+    }
+
     public void updateStudentInfoById(Scanner sc){
         System.out.println("Enter id of student you want to update:");
         Long id = sc.nextLong();
