@@ -12,12 +12,12 @@ import javax.persistence.*;
 public class Question {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    Long id;
-    String questionTitle;
-    String aAnswer;
-    String bAnswer;
-    String cAnswer;
-    String correctAnswer;
+    private Long id;
+    private String questionTitle;
+    private String aAnswer;
+    private String bAnswer;
+    private String cAnswer;
+    private String correctAnswer;
 
     public Question(String questionTitle, String aAnswer, String bAnswer, String cAnswer, String correctAnswer) {
         this.questionTitle = questionTitle;
