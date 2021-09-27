@@ -1,6 +1,6 @@
 package lt.codeacademy.provider;
 
-import lt.codeacademy.entity.Student;
+import lt.codeacademy.entity.*;
 import org.hibernate.SessionFactory;
 import org.hibernate.boot.registry.StandardServiceRegistry;
 import org.hibernate.boot.registry.StandardServiceRegistryBuilder;
@@ -20,6 +20,10 @@ public class SessionFactoryProvider {
             configuration.setProperties(properties);
 
             configuration.addAnnotatedClass(Student.class);
+            configuration.addAnnotatedClass(Exam.class);
+            configuration.addAnnotatedClass(Question.class);
+            configuration.addAnnotatedClass(Result.class);
+            configuration.addAnnotatedClass(Admin.class);
 
             StandardServiceRegistry registry = new StandardServiceRegistryBuilder().applySettings(properties).build();
 
