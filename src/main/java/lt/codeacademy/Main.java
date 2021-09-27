@@ -11,7 +11,6 @@ public class Main {
         Scanner scanner = new Scanner(System.in);
         StudentService studentService = new StudentService();
         ExamService examService = new ExamService();
-        StudentAnswerService studentAnswerService = new StudentAnswerService();
 
 //        studentService.createStudent(scanner);
 //        studentService.updateStudentInfoById(scanner);
