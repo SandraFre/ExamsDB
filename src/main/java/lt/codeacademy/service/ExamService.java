@@ -13,6 +13,8 @@ public class ExamService {
 
     private final ExamRepository examRepository;
 
+    private StudentAnswerService studentAnswerService;
+
     public ExamService(){
         examRepository = new ExamRepository();
     }
@@ -66,4 +68,26 @@ public class ExamService {
             System.out.println(question);
         }
     }
+
+    public void startExam(Scanner sc){
+        System.out.println("Enter exam id:");
+        Long id = sc.nextLong();
+        Exam exam = examRepository.getExam(id);
+        if (exam==null){
+            System.out.println("Exam does not exist");
+            return;
+        }
+
+        System.out.println("---- Exam: " + exam.getTitle() + " ----");
+        for (Question question:exam.getQuestions().stream().collect(Collectors.toList())){
+            System.out.println(question.getQuestionTitle());
+            System.out.println("a) " + question.getAAnswer());
+            System.out.println("b) " + question.getBAnswer());
+            System.out.println("c) " + question.getCAnswer());
+            studentAnswerService.enterAnswer(sc);
+        }
+
+    }
+
+
 }
