@@ -13,9 +13,10 @@ public class Main {
 
 //        studentService.createStudent(scanner);
 //        studentService.updateStudentInfoById(scanner);
-        studentService.getStudents();
+//        studentService.getStudents();
 
 //        examService.createExam(scanner);
+        examService.getExamsWithQuestions();
 
 
     }

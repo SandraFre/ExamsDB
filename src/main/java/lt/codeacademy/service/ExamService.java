@@ -1,11 +1,13 @@
 package lt.codeacademy.service;
 
 import lt.codeacademy.entity.Exam;
+import lt.codeacademy.entity.Question;
 import lt.codeacademy.entity.Student;
 import lt.codeacademy.repository.ExamRepository;
 
 import java.util.List;
 import java.util.Scanner;
+import java.util.stream.Collectors;
 
 public class ExamService {
 
@@ -43,7 +45,10 @@ public class ExamService {
     public void getExamsWithQuestions(){
         List<Exam> exams = examRepository.getExams();
         for (Exam e: exams){
-            System.out.println(e.getId() + " " + e.getTitle() + " " + e.getQuestions());
+            System.out.println(e.getId() + " " + e.getTitle());
+            for (Question question : e.getQuestions().stream().collect(Collectors.toList())) {
+                System.out.println(question);
+            }
         }
     }
 }
