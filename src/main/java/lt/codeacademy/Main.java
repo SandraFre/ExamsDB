@@ -19,6 +19,8 @@ public class Main {
 //        examService.getExamsWithQuestions();
 //        examService.getExamWithQuestionsById(scanner);
 
+        examService.startExam(scanner);
+
 
     }
 }
