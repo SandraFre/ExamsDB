@@ -41,11 +41,11 @@ public class Question {
     @Override
     public String toString() {
         return "Question{" +
-                "id=" + id +
-                " '" + questionTitle + '\'' +
-                ", a) '" + aAnswer + '\'' +
-                ", b) '" + bAnswer + '\'' +
-                ", c) '" + cAnswer + '\'' +
+                "id=" + id + '\n' +
+                " '" + questionTitle + '\'' + '\n' +
+                ", a) '" + aAnswer + '\'' + '\n' +
+                ", b) '" + bAnswer + '\'' + '\n' +
+                ", c) '" + cAnswer + '\'' + '\n' +
                 ", correct answer: '" + correctAnswer + '\'' +
                 '}';
     }

@@ -51,4 +51,19 @@ public class ExamService {
             }
         }
     }
+
+    public void getExamWithQuestionsById(Scanner sc){
+        System.out.println("Enter exam id:");
+        Long id = sc.nextLong();
+        Exam exam = examRepository.getExam(id);
+        if (exam==null){
+            System.out.println("Exam does not exist");
+            return;
+        }
+        System.out.println("--------");
+        System.out.println(exam.getId() + " " + exam.getTitle());
+        for (Question question : exam.getQuestions().stream().collect(Collectors.toList())) {
+            System.out.println(question);
+        }
+    }
 }

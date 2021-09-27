@@ -11,6 +11,10 @@ public class ExamRepository extends AbstractRepository{
         changeEntity(session -> session.save(exam));
     }
 
+    public Exam getExam (Long id){
+        return getEntityInformation(session -> session.get(Exam.class, id));
+    }
+
     public List<Exam> getExams(){
         return getEntityInformation(session -> session.createQuery("FROM Exam", Exam.class).list());
     }
