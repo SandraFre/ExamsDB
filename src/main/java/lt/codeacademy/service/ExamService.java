@@ -14,8 +14,6 @@ public class ExamService {
 
     private final ExamRepository examRepository;
 
-
-
     public ExamService(){
         examRepository = new ExamRepository();
     }
@@ -86,6 +84,7 @@ public class ExamService {
             System.out.println("b) " + question.getBAnswer());
             System.out.println("c) " + question.getCAnswer());
             studentAnswerService.enterAnswer(sc);
+
         }
 
     }
