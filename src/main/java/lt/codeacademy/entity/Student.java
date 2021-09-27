@@ -4,6 +4,7 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
+import java.util.Set;
 
 @NoArgsConstructor
 @Data
@@ -15,6 +16,8 @@ public class Student {
     private Long id;
     private String firstName;
     private String lastName;
+    @OneToMany (mappedBy = "student", cascade = CascadeType.ALL, fetch = FetchType.EAGER)
+    private Set<Result> results;
 
     public Student(String firstName, String lastName) {
         this.firstName = firstName;

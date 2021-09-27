@@ -1,12 +1,16 @@
 package lt.codeacademy.entity;
 
 import lombok.Data;
+import lombok.Getter;
 import lombok.NoArgsConstructor;
+import lombok.Setter;
 
 import javax.persistence.*;
+import java.util.Set;
 
+@Setter
+@Getter
 @NoArgsConstructor
-@Data
 @Entity
 @Table(name = "questions")
 public class Question {
@@ -18,6 +22,8 @@ public class Question {
     private String bAnswer;
     private String cAnswer;
     private String correctAnswer;
+    @ManyToMany (mappedBy = "questions", cascade = CascadeType.ALL, fetch = FetchType.EAGER)
+    private Set<Exam> exams;
 
     public Question(String questionTitle, String aAnswer, String bAnswer, String cAnswer, String correctAnswer) {
         this.questionTitle = questionTitle;
