@@ -20,6 +20,9 @@ public class Student {
     private String lastName;
     @OneToMany (mappedBy = "student", cascade = CascadeType.ALL, fetch = FetchType.EAGER)
     private Set<Result> results;
+    @OneToMany (mappedBy = "student", cascade = CascadeType.ALL, fetch = FetchType.EAGER)
+    private Set<StudentAnswer> answers;
+
 
     public Student(String firstName, String lastName) {
         this.firstName = firstName;

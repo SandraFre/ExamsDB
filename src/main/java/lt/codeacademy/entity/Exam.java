@@ -19,6 +19,8 @@ public class Exam {
     private Set<Result> results;
     @OneToMany(mappedBy = "exam", cascade = CascadeType.ALL, fetch = FetchType.EAGER)
     private Set<Question> questions;
+    @OneToMany (mappedBy = "exam", cascade = CascadeType.ALL, fetch = FetchType.EAGER)
+    private Set<StudentAnswer> answers;
 
     public Exam(String title) {
         this.title = title;

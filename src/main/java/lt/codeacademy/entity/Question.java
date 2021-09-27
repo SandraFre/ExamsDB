@@ -29,6 +29,8 @@ public class Question {
     @ManyToOne (cascade = CascadeType.ALL, fetch = FetchType.EAGER)
     @JoinColumn (name = "exam_id")
     private Exam exam;
+    @OneToMany (mappedBy = "question", cascade = CascadeType.ALL, fetch = FetchType.EAGER)
+    private Set<StudentAnswer> answers;
 
     public Question(String questionTitle, String aAnswer, String bAnswer, String cAnswer, String correctAnswer) {
         this.questionTitle = questionTitle;
